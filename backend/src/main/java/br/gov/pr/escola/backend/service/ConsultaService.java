@@ -5,7 +5,7 @@
 package br.gov.pr.escola.backend.service;
 
 import br.gov.pr.escola.backend.entity.ConsultaEntity;
-import br.gov.pr.escola.backend.entity.util.IBaseService;
+import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.ConsultaRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;

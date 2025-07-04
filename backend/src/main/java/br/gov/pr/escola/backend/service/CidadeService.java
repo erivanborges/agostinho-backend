@@ -5,7 +5,7 @@
 package br.gov.pr.escola.backend.service;
 
 import br.gov.pr.escola.backend.entity.CidadeEntity;
-import br.gov.pr.escola.backend.entity.util.IBaseService;
+import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.CidadeRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;

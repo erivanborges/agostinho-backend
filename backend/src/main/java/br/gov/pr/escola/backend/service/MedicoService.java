@@ -5,7 +5,7 @@
 package br.gov.pr.escola.backend.service;
 
 import br.gov.pr.escola.backend.entity.MedicoEntity;
-import br.gov.pr.escola.backend.entity.util.IBaseService;
+import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.MedicoRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package br.gov.pr.escola.backend.entity.util;
+package br.gov.pr.escola.backend.util;
 
 import java.util.List;
 
