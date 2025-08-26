@@ -6,6 +6,7 @@ package br.gov.pr.escola.backend.repository;
 
 import br.gov.pr.escola.backend.entity.CidadeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Repository;
  * @author Administrador
  */
 @Repository
-public interface CidadeRepository extends JpaRepository<CidadeEntity, Long>{
+public interface CidadeRepository extends JpaRepository<CidadeEntity, Long> {
+    
+    @Query("SELECT c FROM CidadeEntity c WHERE c.id = ?1")
+    CidadeEntity getById(Long id);
     
 }
