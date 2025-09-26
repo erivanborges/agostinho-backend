@@ -8,6 +8,7 @@ import br.gov.pr.escola.backend.entity.ConsultaEntity;
 import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.ConsultaRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConsultaService implements IBaseService<ConsultaEntity>{
     
+    @Autowired
     private ConsultaRepository repository;
 
     @Override
@@ -39,4 +41,15 @@ public class ConsultaService implements IBaseService<ConsultaEntity>{
         this.repository.deleteById(id);
     }
     
+    public List<ConsultaEntity> buscarTodasConsultasTarde() {
+        return this.repository.buscarTodasConsultasTarde();
+    }
+    
+    public List<ConsultaEntity> buscarConsultasMedicoJoao() {
+        return this.repository.buscarConsultasMedicoJoao();
+    }
+    
+    public List<ConsultaEntity> buscarConsultasMedico(String nomeMedico) {
+        return this.repository.buscarConsultasMedico(nomeMedico);
+    }
 }

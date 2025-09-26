@@ -8,6 +8,7 @@ import br.gov.pr.escola.backend.entity.MedicoEntity;
 import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.MedicoRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MedicoService implements IBaseService<MedicoEntity>{
 
+    @Autowired
     private MedicoRepository repository;
     
     @Override

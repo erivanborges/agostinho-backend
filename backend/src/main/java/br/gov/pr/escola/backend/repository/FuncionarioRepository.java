@@ -6,6 +6,7 @@ package br.gov.pr.escola.backend.repository;
 
 import br.gov.pr.escola.backend.entity.FuncionarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,5 +15,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface FuncionarioRepository extends JpaRepository<FuncionarioEntity, Long>{
+    
+    @Query("SELECT f FROM FuncionarioEntity f WHERE f.id = ?1")
+    FuncionarioEntity getById(Long id);
     
 }

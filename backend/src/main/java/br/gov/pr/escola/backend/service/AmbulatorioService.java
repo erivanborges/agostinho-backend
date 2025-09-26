@@ -8,6 +8,7 @@ import br.gov.pr.escola.backend.entity.AmbulatorioEntity;
 import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.AmbulatorioRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AmbulatorioService implements IBaseService<AmbulatorioEntity>{
     
+    @Autowired
     private AmbulatorioRepository repository;
     
     @Override

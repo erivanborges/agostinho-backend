@@ -8,6 +8,7 @@ import br.gov.pr.escola.backend.entity.FuncionarioEntity;
 import br.gov.pr.escola.backend.util.IBaseService;
 import br.gov.pr.escola.backend.repository.FuncionarioRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FuncionarioService implements IBaseService<FuncionarioEntity>{
 
+    @Autowired
     private FuncionarioRepository repository;
     
     @Override

@@ -12,8 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
+//import java.time.LocalDate;
 
 /**
  *

@@ -6,6 +6,7 @@ package br.gov.pr.escola.backend.repository;
 
 import br.gov.pr.escola.backend.entity.MedicoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,5 +15,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface MedicoRepository extends JpaRepository<MedicoEntity, Long>{
+    
+    @Query("SELECT m FROM MedicoEntity m WHERE m.id = ?1")
+    MedicoEntity getById(Long id);
     
 }

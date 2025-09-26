@@ -6,6 +6,7 @@ package br.gov.pr.escola.backend.repository;
 
 import br.gov.pr.escola.backend.entity.AmbulatorioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,5 +15,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface AmbulatorioRepository extends JpaRepository<AmbulatorioEntity, Long> {
+    
+    @Query("SELECT a FROM AmbulatorioEntity a WHERE a.id = ?1")
+    AmbulatorioEntity getById(Long id);
     
 }
