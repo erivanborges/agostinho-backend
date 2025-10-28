@@ -110,13 +110,13 @@ public class BackendApplication {
                 log.info("Paciente: " + consulta.getPaciente().getNome());
             }*/
             
-            for (ConsultaEntity consulta : consultaService.buscarConsultasMedico("Carlos")) {
+            /*for (ConsultaEntity consulta : consultaService.buscarConsultasMedico("Carlos")) {
                 log.info("");
                 log.info("Data da consulta: " + consulta.getData());
                 log.info("Hora da consulta: " + consulta.getHora());
                 log.info("Medico: " + consulta.getMedico().getNome());
                 log.info("Paciente: " + consulta.getPaciente().getNome());
-            }
+            }*/
             
         };
 
