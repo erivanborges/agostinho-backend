@@ -4,8 +4,8 @@
  */
 package br.gov.pr.escola.backend.controller;
 
-import br.gov.pr.escola.backend.entity.AmbulatorioEntity;
-import br.gov.pr.escola.backend.service.AmbulatorioService;
+import br.gov.pr.escola.backend.entity.PacienteEntity;
+import br.gov.pr.escola.backend.service.PacienteService;
 import java.util.List;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,44 +25,44 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Administrador
  */
 @RestController
-public class AmbulatorioController {
-
+public class PacienteController {
+    
     @Autowired
-    private AmbulatorioService service;
+    private PacienteService service;
 
-    @GetMapping("api/v1/ambulatorios")
-    public ResponseEntity<List<AmbulatorioEntity>> findAll() {
-        List<AmbulatorioEntity> ambulatorios = this.service.findAll();
+    @GetMapping("api/v1/pacientes")
+    public ResponseEntity<List<PacienteEntity>> findAll() {
+        List<PacienteEntity> pacientes = this.service.findAll();
 
-        return new ResponseEntity<List<AmbulatorioEntity>>(ambulatorios, HttpStatus.OK);
+        return new ResponseEntity<List<PacienteEntity>>(pacientes, HttpStatus.OK);
     }
 
-    @GetMapping("api/v1/ambulatorios/{id}")
-    public ResponseEntity<AmbulatorioEntity> getById(@PathVariable("id") Long id) {
-        AmbulatorioEntity ambulatorio = this.service.getById(id);
+    @GetMapping("api/v1/pacientes/{id}")
+    public ResponseEntity<PacienteEntity> getById(@PathVariable("id") Long id) {
+        PacienteEntity paciente = this.service.getById(id);
 
-        return new ResponseEntity<AmbulatorioEntity>(ambulatorio, HttpStatus.OK);
+        return new ResponseEntity<PacienteEntity>(paciente, HttpStatus.OK);
     }
 
-    @PostMapping("api/v1/ambulatorios")
-    public ResponseEntity create(@RequestBody AmbulatorioEntity ambulatorio) {
+    @PostMapping("api/v1/pacientes")
+    public ResponseEntity create(@RequestBody PacienteEntity paciente) {
         try {
-            AmbulatorioEntity newAmbulatorio = this.service.save(ambulatorio);
-            return ResponseEntity.status(HttpStatus.OK).body(newAmbulatorio);
+            PacienteEntity newPaciente = this.service.save(paciente);
+            return ResponseEntity.status(HttpStatus.OK).body(newPaciente);
         } catch (Exception ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex);
         }
     }
 
-    @PutMapping("api/v1/ambulatorios/{id}")
-    public ResponseEntity update(@PathVariable("id") Long id, @RequestBody AmbulatorioEntity ambulatorio) {
+    @PutMapping("api/v1/pacientes/{id}")
+    public ResponseEntity update(@PathVariable("id") Long id, @RequestBody PacienteEntity paciente) {
         try {
-            AmbulatorioEntity found = this.service.getById(id);
+            PacienteEntity found = this.service.getById(id);
 
             if (found != null) {
-                ambulatorio.setId(id);
-                this.service.save(ambulatorio);
-                return ResponseEntity.status(HttpStatus.OK).body(ambulatorio);
+                paciente.setId(id);
+                this.service.save(paciente);
+                return ResponseEntity.status(HttpStatus.OK).body(paciente);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Found");
             }
@@ -72,7 +72,7 @@ public class AmbulatorioController {
         }
     }
 
-    @DeleteMapping("api/v1/ambulatorios/{id}")
+    @DeleteMapping("api/v1/pacientes/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         try {
 
@@ -87,4 +87,5 @@ public class AmbulatorioController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
         }
     }
+    
 }
